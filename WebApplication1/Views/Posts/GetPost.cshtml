@@ -1,0 +1,48 @@
+﻿@model WebSite.Models.PostModel
+
+@{
+    ViewData["Title"] = "GetPost";
+}
+
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+
+            <td><p>@Html.DisplayFor(model => model.Title)</p></td>
+            <td><p class="post-stars">
+                @if (Model.Stars == 1)
+                {
+                    <img class="post-stars" src="~/images/1star.png">
+                }
+                @if (Model.Stars == 2)
+                {
+                    <img class="post-stars" src="~/images/2stars.png">
+                }
+                @if (Model.Stars == 3)
+                {
+                    <img class="post-stars" src="~/images/3stars.png">
+                }
+                @if (Model.Stars == 4)
+                {
+                    <img class="post-stars" src="~/images/4stars.png">
+                }
+                @if (Model.Stars == 5)
+                {
+                    <img class="post-stars" src="~/images/5stars.png">
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Html.DisplayFor(model => model.Description)</p>
+            </td>    
+            <td>
+                <img class="post-image" src=@Html.DisplayFor(model => model.ImageURL)>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
